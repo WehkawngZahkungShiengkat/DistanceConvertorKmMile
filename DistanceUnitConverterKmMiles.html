@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Distance unit Converter</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <style>
+ #splashscreen {
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:100%;
+    background-color:#9AFEFF;
+}
+.imgcenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.purpletext {
+  color: #3BB9FF;
+  letter-spacing: -2px;
+}
+ </style>
+ <script>
+ function writeit1(){
+ var text1 = document.form1.input.value;
+ var convert1 = (text1 * 1.609347).toFixed(1);
+ document.getElementById('answer1').innerHTML = convert1;
+     }
+
+     function writeit2(){
+     var text2 = document.form2.input.value;
+     var convert2 = (text2 / 1.609347).toFixed(1);
+     document.getElementById('answer2').innerHTML = convert2;
+         }
+ </script>
+
+
+</head>
+<body>
+<!-- Splash screen with a link PNG image -->
+<div id="splashscreen">
+  <h2 class="text-center purpletext"><b>Wez's Distance Unit Converter - Web App</b></h2>
+    <a href="#" class="enter_link">
+      <img class="imgcenter" src="MtoKM_icon.png" width="320px"  />
+      <h3 class="text-center">Start</h3>
+    </a>
+</div>
+
+
+
+<!-- Main Page Content -->
+<div class="container-fluid">
+
+<h2 class="text-center purpletext">Wez's Distance Unit Converter - Web App</h2>
+<img class="imgcenter" src="MtoKM_icon.png" width="100px"  />
+<p>&nbsp;</p>
+<div class="panel-group" id="accordion">
+ <div class="panel panel-default">
+   <div class="panel-heading">
+     <h4 class="panel-title">
+       <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+      <h4 class="text-center purpletext">Miles &rarr; Kilometers</h4></a>
+     </h4>
+   </div>
+   <div id="collapse1" class="panel-collapse collapse">
+     <div class="panel-body">
+
+       <div class="form-group">
+       <FORM name="form1">
+     <p class="text-center"> Enter Distance in Miles  </p>
+       <p class="text-center"><INPUT type="text" name="input" size=10> (Miles)</p>
+         <p class="text-center"><button type="button" class="btn btn-primary" onClick="JavaScript:writeit1()">Convert to Kilometers</button></p>
+       </FORM>
+       <p>&nbsp;</p>
+       <p class="text-center">= <span id="answer1" class="alert alert-info">X</span> Kilometers (KM)</p>
+       </div>
+
+   </div>
+   </div>
+ </div>
+ <div class="panel panel-default">
+   <div class="panel-heading">
+     <h4 class="panel-title">
+       <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+       <h4 class="text-center purpletext">Kilometers &rarr; Miles</h4></a>
+     </h4>
+   </div>
+   <div id="collapse2" class="panel-collapse collapse">
+     <div class="panel-body">
+
+       <div class="form-group">
+       <FORM name="form2">
+       <p class="text-center">Enter Temperature in Celsius</p>
+        <p class="text-center"><INPUT type="text" name="input" size=10> (KM)</p>
+         <p class="text-center"><button type="button" class="btn btn-primary" onClick="JavaScript:writeit2()">Convert to Miles</button></p>
+       </FORM>
+       <p>&nbsp;</p>
+       <p class="text-center">= <span id="answer2" class="alert alert-info">X</span> Miles (m)</p>
+       </div>
+
+
+   </div>
+   </div>
+ </div>
+</div>
+
+
+
+
+
+</div>
+
+<script>
+$('.enter_link').click(function () {
+    $(this).parent('#splashscreen').fadeOut(500);
+
+});
+</script>
+</body>
+</html>
+
